@@ -1,4 +1,17 @@
 <template>
+import Firebase from 'firebase'
+let config = {
+    apiKey: "...",
+    authDomain: "...",
+    databaseURL: "...",
+    storageBucket: "...",
+    messagingSenderId: "..."
+  };
+
+let app = Firebase.initializeApp(config)
+let db = app.database()
+let booksRef = db.ref('abogados')
+
   <div id="app">
     <img src="./assets/logo.png">
     <router-view></router-view>
