@@ -1,5 +1,21 @@
 <template>
   <div class="hello">
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Abogado</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="abogado in abogados">
+            <td><a v-bind:href="abogado.url">{{abogado.name}}</a></td>
+            <td>{{abogado.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
