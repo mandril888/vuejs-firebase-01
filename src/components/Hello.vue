@@ -46,6 +46,7 @@
 
 <script>
 import Firebase from 'firebase'
+import toastr from 'toastr'
 
 // Initialize Firebase
 let config = {
@@ -85,6 +86,7 @@ export default {
     },
     removeLawyer: function (lawyer) {
       abogadosRef.child(lawyer['.key']).remove()
+      toastr.success('Book removed successfully')
     }
   }
 }
