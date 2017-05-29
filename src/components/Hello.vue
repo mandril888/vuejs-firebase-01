@@ -14,7 +14,7 @@
           <tr v-for="abogado in abogados">
             <td><a v-bind:href="abogado.url">{{abogado.name}}</a></td>
             <td>{{abogado.email}}</td>
-            <td><span class="glyphicon glyphicon-trash" aria-hidden="true" v-on:click="removeLawyer(lawyer)"></span></td>
+            <td><span class="glyphicon glyphicon-trash" aria-hidden="true" v-on:click="removeLawyer(abogado)"></span></td>
           </tr>
         </tbody>
       </table>
@@ -84,8 +84,8 @@ export default {
       this.newLawyer.gmail = ''
       this.newLawyer.url = 'http://'
     },
-    removeLawyer: function (lawyer) {
-      abogadosRef.child(lawyer['.key']).remove()
+    removeLawyer: function (abogado) {
+      abogadosRef.child(abogado['.key']).remove()
       toastr.success('Book removed successfully')
     }
   }
